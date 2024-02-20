@@ -97,37 +97,41 @@ class Page:
 
     # Waits
     def wait_for_number_of_windows_to_be(self, number_of_windows: int, timeout=__DEFAULT_TIME_OUT_SECONDS):
-        logging.info(f"Waiting for number of windows to be: {number_of_windows}. Timeout set to {timeout}")
+        logging.info(f"Waiting for number of windows to be: {number_of_windows}. Timeout set to {timeout} seconds")
         return self.__get_web_driver_wait(timeout).until(
             ec.number_of_windows_to_be(number_of_windows))
 
     def wait_until_title_contains_text(self, text: str, timeout=__DEFAULT_TIME_OUT_SECONDS):
-        logging.info(f"Waiting for the title of the current page to contain text: {text}. Timeout set to {timeout}")
+        logging.info(f"Waiting for the title of the current page to contain text: {text}. Timeout set to {timeout} "
+                     f"seconds")
         return self.__get_web_driver_wait(timeout).until(
             ec.title_contains(text))
 
     def wait_for_title_to_be(self, title: str, timeout=__DEFAULT_TIME_OUT_SECONDS):
-        logging.info(f"Waiting for the title of the current page to be: {title}. Timeout set to {timeout}")
+        logging.info(f"Waiting for the title of the current page to be: {title}. Timeout set to {timeout} seconds")
         return self.__get_web_driver_wait(timeout).until(
             ec.title_is(title))
 
     def wait_until_url_changes(self, expected_url: str, timeout=__DEFAULT_TIME_OUT_SECONDS):
-        logging.info(f"Waiting until the URL of the current page changes to: {expected_url}. Timeout set to {timeout}")
+        logging.info(f"Waiting until the URL of the current page changes to: {expected_url}. Timeout set to {timeout}"
+                     f" seconds")
         return self.__get_web_driver_wait(timeout).until(
             ec.url_changes(expected_url))
 
     def wait_until_url_contains(self, text: str, timeout=__DEFAULT_TIME_OUT_SECONDS):
-        logging.info(f"Waiting until the URL of the current page contains text: {text}. Timeout set to {timeout}")
+        logging.info(f"Waiting until the URL of the current page contains text: {text}. Timeout set to {timeout} "
+                     f"seconds")
         return self.__get_web_driver_wait(timeout).until(
             ec.url_contains(text))
 
     def wait_until_url_matches_pattern(self, pattern: str, timeout=__DEFAULT_TIME_OUT_SECONDS):
-        logging.info(f"Waiting until the URL of the current page matches the pattern: {pattern}. Timeout set to {timeout}")
+        logging.info(f"Waiting until the URL of the current page matches the pattern: {pattern}. Timeout set to "
+                     f"{timeout} seconds")
         return self.__get_web_driver_wait(timeout).until(
             ec.url_matches(pattern))
 
     def wait_for_url_to_be(self, expected_url: str, timeout=__DEFAULT_TIME_OUT_SECONDS):
-        logging.info(f"Waiting until the URL of the current page is: {expected_url}. Timeout set to {timeout}")
+        logging.info(f"Waiting until the URL of the current page is: {expected_url}. Timeout set to {timeout} seconds")
         return self.__get_web_driver_wait(timeout).until(
             ec.url_to_be(expected_url))
 
