@@ -1,6 +1,5 @@
 import time
 
-from framework.ui.Page import Page
 from framework.ui.element.Element import Element
 from framework.ui.pages.LoginPage import LoginPage
 
